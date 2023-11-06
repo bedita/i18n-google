@@ -16,7 +16,6 @@ namespace BEdita\I18n\Google\Test\Core;
 
 use BEdita\I18n\Google\Core\Translator;
 use Cake\TestSuite\TestCase;
-use Google\TextResult;
 use Google\Cloud\Translate\V2\TranslateClient;
 
 /**
