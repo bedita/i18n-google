@@ -16,7 +16,6 @@ namespace BEdita\I18n\Google\Test\Core;
 
 use BEdita\I18n\Google\Core\Translator;
 use Cake\TestSuite\TestCase;
-use Google\TextResult;
 use Google\Cloud\Translate\V2\TranslateClient;
 
 /**
@@ -62,16 +61,18 @@ class TranslatorTest extends TestCase
                      */
                     public function translate($text, array $options = []): ?array
                     {
-                        return ['translation of ' . $text . ' from ' . $options['source'] . ' to ' . $options['target']];
+                        return [
+                            'text' => 'translation of ' . json_encode($text) . ' from ' . $options['source'] . ' to ' . $options['target'],
+                        ];
                     }
                 };
             }
         };
-        $translator->setup([]);
+        $translator->setup(['auth_key' => 'test-auth-key']);
         $actual = $translator->translate(['Hello world!'], 'en', 'it');
         $expected = json_encode([
             'translation' => [
-                'translation of ["Hello world!"] from en to it',
+                'translation of "Hello world!" from en to it',
             ],
         ]);
         static::assertEquals($expected, $actual);
