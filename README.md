@@ -17,7 +17,7 @@ The recommended way to install composer packages is:
 composer require bedita/i18n-google
 ```
 
-Note: php version supported is >= 8.1.
+Note: php version supported is >= 8.3.
 
 ## Google Cloud Translation
 
