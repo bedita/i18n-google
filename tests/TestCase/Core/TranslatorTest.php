@@ -17,19 +17,21 @@ namespace BEdita\I18n\Google\Test\Core;
 use BEdita\I18n\Google\Core\Translator;
 use Cake\TestSuite\TestCase;
 use Google\Cloud\Translate\V2\TranslateClient;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversMethod;
 
 /**
  * {@see \BEdita\I18n\Google\Core\Translator} Test Case
- *
- * @covers \BEdita\I18n\Google\Core\Translator
  */
+#[CoversClass(Translator::class)]
+#[CoversMethod(Translator::class, 'setup')]
+#[CoversMethod(Translator::class, 'translate')]
 class TranslatorTest extends TestCase
 {
     /**
      * Test setup.
      *
      * @return void
-     * @covers ::setup()
      */
     public function testSetup(): void
     {
@@ -47,7 +49,6 @@ class TranslatorTest extends TestCase
      * Test translate.
      *
      * @return void
-     * @covers ::translate()
      */
     public function testTranslate(): void
     {
