@@ -84,7 +84,7 @@ class Translator implements TranslatorInterface
         foreach ($texts as $text) {
             $translation[] = (string)Hash::get(
                 $this->googleClient->translate($text, ['source' => $from, 'target' => $to]),
-                'text'
+                'text',
             );
         }
 
