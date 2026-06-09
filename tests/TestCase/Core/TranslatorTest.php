@@ -18,14 +18,11 @@ use BEdita\I18n\Google\Core\Translator;
 use Cake\TestSuite\TestCase;
 use Google\Cloud\Translate\V2\TranslateClient;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\CoversMethod;
 
 /**
  * {@see \BEdita\I18n\Google\Core\Translator} Test Case
  */
 #[CoversClass(Translator::class)]
-#[CoversMethod(Translator::class, 'setup')]
-#[CoversMethod(Translator::class, 'translate')]
 class TranslatorTest extends TestCase
 {
     /**
